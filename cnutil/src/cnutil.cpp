@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <string>
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
-#include "common/base58.h"
+#include "Common/Base58.h"
 
 using namespace cryptonote;
 
