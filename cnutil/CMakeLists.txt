@@ -8,12 +8,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_GNU_SOURCE")
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories("${MONERO_DIR}/contrib/epee/include")
 include_directories("${MONERO_DIR}/src")
+include_directories("${MONERO_DIR}/include")
 include_directories("${MONERO_DIR}/external/easylogging++")
 
 link_directories(
     ${MONERO_DIR}/src/CryptoNoteCore
     ${MONERO_DIR}/src/crypto
     ${MONERO_DIR}/src/common
+    ${MONERO_DIR}/include
 )
 
 # Build library
@@ -23,6 +25,7 @@ target_link_libraries(${CXXLIB}
     CryptoNoteCore
     cncrypto
     common
+    include
 )
 
 target_link_libraries(${CXXLIB}
