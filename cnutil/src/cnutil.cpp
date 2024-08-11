@@ -3,7 +3,7 @@
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "Common/Base58.h"
 
-using namespace cryptonote;
+using namespace CryptoNote;
 
 extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string input = std::string(blob, len);
