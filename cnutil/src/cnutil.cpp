@@ -9,7 +9,7 @@ extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string input = std::string(blob, len);
     std::string output = "";
 
-    block b = AUTO_VAL_INIT(b);
+    Block b = AUTO_VAL_INIT(b);
     if (!parse_and_validate_block_from_blob(input, b)) {
         return 0;
     }
