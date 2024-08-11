@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <string>
-#include "cryptonote_basic/cryptonote_format_utils.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "common/base58.h"
 
 using namespace cryptonote;
