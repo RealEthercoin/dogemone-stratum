@@ -9,6 +9,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories("${MONERO_DIR}/contrib/epee/include")
 include_directories("${MONERO_DIR}/src")
 include_directories("${MONERO_DIR}/include")
+include_directories("${MONERO_DIR}/external")
 include_directories("${MONERO_DIR}/external/easylogging++")
 
 link_directories(
@@ -16,6 +17,7 @@ link_directories(
     ${MONERO_DIR}/src/crypto
     ${MONERO_DIR}/src/common
     ${MONERO_DIR}/include
+    ${MONERO_DIR}/external
 )
 
 # Build library
@@ -26,6 +28,7 @@ target_link_libraries(${CXXLIB}
     cncrypto
     common
     include
+    external
 )
 
 target_link_libraries(${CXXLIB}
