@@ -9,6 +9,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories("${MONERO_DIR}/contrib/epee/include")
 include_directories("${MONERO_DIR}/src")
 include_directories("${MONERO_DIR}/include")
+include_directories(${CMAKE_SOURCE_DIR}/System)
 include_directories("${MONERO_DIR}/external")
 include_directories("${MONERO_DIR}/external/easylogging++")
 
@@ -19,6 +20,7 @@ link_directories(
     ${MONERO_DIR}/src/Platform
     ${MONERO_DIR}/include
     ${MONERO_DIR}/external
+    ${CMAKE_SOURCE_DIR}/System
 )
 
 # Build library
@@ -31,6 +33,7 @@ target_link_libraries(${CXXLIB}
     Platform
     include
     external
+    System
 )
 
 target_link_libraries(${CXXLIB}
