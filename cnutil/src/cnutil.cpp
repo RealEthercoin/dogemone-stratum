@@ -2,6 +2,7 @@
 #include <string>
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "Common/Base58.h"
+#include "Serialization/SerializationTools.h"
 
 using namespace CryptoNote;
 
@@ -9,11 +10,10 @@ extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string input = std::string(blob, len);
     std::string output = "";
 
-    Block b = Block();
+    Block b;
     BinaryArray inputBinary(input.begin(), input.end());
 
-    // Manually handle block deserialization or use a correct method from Dogemone.
-    if (!CryptoNote::fromBinaryArray(b, inputBinary)) {  // Adjust to correct parsing method
+    if (!CryptoNote::fromBinaryArray(b, inputBinary)) {  // Replace with the correct deserialization method
         return 0;
     }
 
