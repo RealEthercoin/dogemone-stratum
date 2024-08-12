@@ -10,8 +10,10 @@ extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string output = "";
 
     Block b = Block();
-    BinaryArray inputBinary(input.begin(), input.end());
-    if (!CryptoNote::parseAndValidateTransactionFromBinaryArray(inputBinary, b)) {
+
+    // Here we should add the correct way to parse the block.
+    // Assuming a hypothetical function similar to `parseAndValidateTransactionFromBinaryArray` exists for blocks.
+    if (!CryptoNote::fromBinaryArray(b, inputBinary)) {  // Adjust to correct parsing method
         return 0;
     }
 
