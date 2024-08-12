@@ -16,7 +16,7 @@ link_directories(
     ${MONERO_DIR}/src/CryptoNoteCore
     ${MONERO_DIR}/src/crypto
     ${MONERO_DIR}/src/Common
-    ${MONERO_DIR}/src/system
+    ${MONERO_DIR}/src/Platform
     ${MONERO_DIR}/include
     ${MONERO_DIR}/external
 )
@@ -28,7 +28,7 @@ target_link_libraries(${CXXLIB}
     CryptoNoteCore
     cncrypto
     Common
-    system
+    Platform
     include
     external
 )
