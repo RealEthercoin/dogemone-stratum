@@ -10,7 +10,8 @@ extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string output = "";
 
     Block b = Block();
-    if (!CryptoNote::parseAndValidateTransactionFromBinaryArray(input, b)) { // Adjust based on available functions
+    BinaryArray inputBinary(input.begin(), input.end());
+    if (!CryptoNote::parseAndValidateTransactionFromBinaryArray(inputBinary, b)) {
         return 0;
     }
 
@@ -25,5 +26,5 @@ extern "C" bool validate_address(const char *addr, size_t len) {
     std::string input = std::string(addr, len);
     std::string output = "";
     uint64_t prefix;
-    return CryptoNote::tools::base58::decode_addr(input, prefix, output);
+    return Tools::Base58::decode_addr(input, prefix, output);
 }
