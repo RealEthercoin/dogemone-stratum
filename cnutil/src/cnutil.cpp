@@ -10,7 +10,7 @@ extern "C" uint32_t convert_blob(const char *blob, size_t len, char *out) {
     std::string output = "";
 
     Block b = Block();
-    if (!CryptoNote::parseAndValidateBlockFromBinaryArray(input, b)) { // Adjust based on available functions
+    if (!CryptoNote::parseAndValidateTransactionFromBinaryArray(input, b)) { // Adjust based on available functions
         return 0;
     }
 
